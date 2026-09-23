@@ -6,13 +6,13 @@ namespace AsyncConversion;
 
 internal class Program
 {
-    static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
-        DataAccess.DataAccessLayer dataAccess = new();
-        BusinessLogic.BusinessLogicLayer businessLogicLayer = new(dataAccess);
+        DataAccessLayer dataAccess = new();
+        BusinessLogicLayer businessLogicLayer = new(dataAccess);
         UILayer ui = new(businessLogicLayer);
 
-        ui.Run();
+       await ui.Run();
 
     }
 }

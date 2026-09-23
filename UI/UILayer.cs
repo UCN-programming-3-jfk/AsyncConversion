@@ -9,13 +9,14 @@ public class UILayer
     }
 
 
-    public void Run()
+    public async Task Run()
     {
         Console.WriteLine("Would you like to see the customers? (Yes/No)");
         if (Console.ReadLine().ToUpper().Contains("Y"))
         {
             Console.WriteLine("CUSTOMERS");
-            BusinessLogicLayer.GetCustomers().ToList().ForEach(Console.WriteLine);
+            var customers = await BusinessLogicLayer.GetCustomersAsync();
+            customers.ToList().ForEach(Console.WriteLine);
         }
     }
 }

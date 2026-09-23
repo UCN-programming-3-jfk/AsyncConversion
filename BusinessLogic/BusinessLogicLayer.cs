@@ -12,8 +12,8 @@ public class BusinessLogicLayer
     }
 
 
-    public IEnumerable<Customer> GetCustomers()
+    public async Task<IEnumerable<Customer>> GetCustomersAsync()
     {
-        return DataAccess.GetCustomers();
+        return await DataAccess.GetCustomersAsync();
     }
 }

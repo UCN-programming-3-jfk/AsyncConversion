@@ -2,7 +2,7 @@
 namespace AsyncConversion.DataAccess;
 public class DataAccessLayer
 {
-    internal IEnumerable<Customer> GetCustomers()
+    public IEnumerable<Customer> GetCustomers()
     {
         return new List<Customer>{ 
             new Customer(1, "Alice Jensen", "alice.jensen@example.com"),
